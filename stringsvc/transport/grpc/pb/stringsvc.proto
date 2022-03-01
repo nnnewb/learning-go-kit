@@ -1,0 +1,15 @@
+syntax = "proto3";
+option go_package = "play/stringsvc/transport/pb";
+
+message UppercaseRequest { string s = 1; }
+
+message UppercaseResponse { string v = 1; }
+
+message CountRequest { string s = 1; }
+
+message CountResponse { int32 n = 1; }
+
+service StringService {
+  rpc Uppercase(UppercaseRequest) returns (UppercaseResponse);
+  rpc Count(CountRequest) returns (CountResponse);
+}
